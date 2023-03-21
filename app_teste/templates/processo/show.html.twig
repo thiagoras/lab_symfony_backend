@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Processo{% endblock %}
+
+{% block body %}
+    <h1>Processo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ processo.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ processo.numero }}</td>
+            </tr>
+            <tr>
+                <th>Descricao</th>
+                <td>{{ processo.descricao }}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ processo.titulo }}</td>
+            </tr>
+            <tr>
+                <th>Classificacao</th>
+                <td>{{ processo.classificacao }}</td>
+            </tr>
+            <tr>
+                <th>Observacao</th>
+                <td>{{ processo.observacao }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_processo_index') }}">back to list</a>
+
+    <a href="{{ path('app_processo_edit', {'id': processo.id}) }}">edit</a>
+
+    {{ include('processo/_delete_form.html.twig') }}
+{% endblock %}

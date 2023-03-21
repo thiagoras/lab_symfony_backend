@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Processo index{% endblock %}
+
+{% block body %}
+    <h1>Processo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numero</th>
+                <th>Descricao</th>
+                <th>Titulo</th>
+                <th>Classificacao</th>
+                <th>Observacao</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for processo in processos %}
+            <tr>
+                <td>{{ processo.id }}</td>
+                <td>{{ processo.numero }}</td>
+                <td>{{ processo.descricao }}</td>
+                <td>{{ processo.titulo }}</td>
+                <td>{{ processo.classificacao }}</td>
+                <td>{{ processo.observacao }}</td>
+                <td>
+                    <a href="{{ path('app_processo_show', {'id': processo.id}) }}">show</a>
+                    <a href="{{ path('app_processo_edit', {'id': processo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_processo_new') }}">Create new</a>
+{% endblock %}

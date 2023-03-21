@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Symfony!</title>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+
+        editar tipo de documento {{ tipoDocumento.id|e }}
+
+        {{ form(form) }}
+        <form>
+          <label for="fname">Categoria:</label>
+          <input type="text" id="categoria" name="categoria"><br>
+        </form>
+    </body>
+</html>

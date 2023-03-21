@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DocumentoController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<div class="example-wrapper">
+    <h1>Documento</h1>
+
+    {% if documento %}
+
+        <p>Descrição: {{documento.descricao}}</p>
+        <p>Número: {{documento.numero}}</p>
+        <p>Autor: {{documento.autor}}</p>
+        <p>Observação: {{documento.observacao}}</p>
+        <p>TipoDocumento: {{documento.tipoDocumento.nome|default('sem tipo')}}</p>
+        
+    {% else %}
+        <p>Documento {{idDocumento}} não existe</p>
+    {% endif %}
+
+    <a href="/documento/">Listar</a>
+
+    <a href="/documento/alterar/{{idDocumento}}">Editar</a>
+</div>
+{% endblock %}

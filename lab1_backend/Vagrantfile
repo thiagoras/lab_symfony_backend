@@ -1,0 +1,15 @@
+Vagrant.configure("2") do |config|
+  config.vm.usable_port_range = 6783..6784
+  config.vm.usable_port_range = 30000..32767
+  config.vm.usable_port_range = 2376..10254
+
+  config.vm.box = "bento/ubuntu-22.04"
+
+  config.vm.provider "virtualbox" do |v|
+	   v.memory = 4096
+  end
+
+  config.vm.define "ubuntu1" do |m|
+       m.vm.network "private_network", ip: "192.168.56.20"
+  end
+end

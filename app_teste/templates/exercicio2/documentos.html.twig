@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Symfony!</title>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+
+        Lista de documentos:<br>
+
+            <ul>
+                {% for documento  in documentoList %}
+                    <a href="?php echo url_for('documento/editarDocumento?id={{ documento.id|e }}') ?>">
+                        <li>{{ documento.id|e }}</li>
+                    </a>
+                    <ul>    
+                        <li>{{ documento.descricao|e }}</li>
+                        <li>{{ documento.numero|e }}</li>                    
+                        <li>{{ documento.autor|e }}</li>
+                        <li>{{ documento.observacao|e }}</li>
+                        
+                        <li>{{ documento.tipoDocumento.categoria|e }}</li>
+                    </ul>
+                {% endfor %}
+            </ul>
+ 
+    </body>
+</html>

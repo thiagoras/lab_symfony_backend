@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Symfony!</title>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+
+        {% if numero %}
+            Adição: {{ numero+numero}}<br>
+            Subtração: {{ numero-numero}}<br>
+            Divisão: {{ numero/numero}}<br>
+            Multiplicação: {{ numero*numero}}<br>
+        {% endif %}
+
+        Adição: {{ numAdicao}}<br>
+        Subtração: {{ numMenos}}<br>
+        Divisão: {{ numDiv}}<br>
+        Multiplicação: {{ numMult}}<br>
+
+        {# ... #}
+    </body>
+</html>

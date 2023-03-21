@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Symfony!</title>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+
+        Lista de tipos de documentos:<br>
+
+            <ul>
+                {% for tipoDocumento  in tipoDocumentoList %}
+
+                        <li>{{ tipoDocumento.id|e }} - 
+                        {{ tipoDocumento.categoria|e }}: 
+                        <a href="/tipoDocumento/editar/{{tipoDocumento.id}}">editar</a>, 
+                        <a href="/tipoDocumento/remover/{{tipoDocumento.id}}">remover</a>
+                {% endfor %}
+            </ul>
+ 
+    </body>
+</html>

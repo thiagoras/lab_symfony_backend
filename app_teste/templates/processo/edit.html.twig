@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Processo{% endblock %}
+
+{% block body %}
+    <h1>Edit Processo</h1>
+
+    {{ include('processo/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_processo_index') }}">back to list</a>
+
+    {{ include('processo/_delete_form.html.twig') }}
+{% endblock %}
